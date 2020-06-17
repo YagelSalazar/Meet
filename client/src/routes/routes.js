@@ -1,0 +1,9 @@
+export const PROXY = 'http://localhost:3000';
+export const ROOT = '/';
+export const REGISTER = '/register';
+export const HOME = '/home';
+export const PROFILE = '/profile';
+export const PROFILE_EDIT = '/edit-profile';
+export const CHAT = '/chat';
+export const SETTINGS = '/settings';
+export const COMMUNITY = '/community';

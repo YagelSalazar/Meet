@@ -1,0 +1,178 @@
+@import '../../sass/abstracts/variables';
+
+.btn {
+	&,
+	&:link,
+	&:visited {
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1.5rem 4rem;
+		display: inline-block;
+		border-radius: 10rem;
+		transition: all 0.2s;
+		position: relative;
+		font-size: $d-fs;
+
+		// Change for <button>
+		border: none;
+		cursor: pointer;
+	}
+	&:hover {
+		transform: translateY(-0.3rem);
+		box-shadow: 0 1rem 2rem rgba($black, 0.2);
+
+		&::after {
+			transform: scaleX(1.4) scaleY(1.6);
+			opacity: 0;
+		}
+	}
+
+	&:active,
+	&:focus {
+		outline: none;
+		transform: translateY(-0.1rem);
+		box-shadow: 0 0.5rem 1rem rgba($black, 0.2);
+	}
+
+	&--white {
+		background-color: $white;
+		color: $grey-d1;
+
+		&::after {
+			background-color: $white;
+		}
+	}
+
+	&--primary {
+		background-color: $primary-dark;
+		color: $white;
+
+		&::after {
+			background-color: $primary-dark;
+		}
+	}
+
+	&::after {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		border-radius: 10rem;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		transition: all 0.4s;
+	}
+
+	&--animated {
+		animation: moveInBottom 0.6s ease-in-out 0.6s;
+		animation-fill-mode: backwards;
+	}
+}
+
+.btn-inline {
+	border: none;
+	color: $primary;
+	font-size: inherit;
+	border-bottom: 2px solid currentColor;
+	padding-bottom: 2px;
+	display: inline-block;
+	background-color: transparent;
+	cursor: pointer;
+	transition: all 0.2s;
+
+	& span {
+		margin-left: 5px;
+		transition: margin-left 0.2s;
+	}
+
+	&:hover {
+		color: $grey-d1;
+		animation: pulsate 1s infinite;
+
+		span {
+			margin-left: 10px;
+		}
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.btn-slide {
+	font-size: 1.5rem !important;
+	font-weight: 300 !important;
+	text-transform: uppercase !important;
+	border-radius: 100px !important;
+	border: none !important;
+	background-image: linear-gradient(to right, $primary-light, $primary-dark);
+	color: $white !important;
+	position: relative !important;
+	overflow: hidden !important;
+	cursor: pointer !important;
+	text-align: center !important;
+
+	& > * {
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		transition: all 0.2s;
+	}
+
+	&__visible {
+		padding: 1rem 7.5rem;
+	}
+
+	&__invisible {
+		position: absolute;
+		padding: 1rem 0;
+		left: 0;
+		top: -100%;
+	}
+
+	&:hover {
+		background-image: linear-gradient(to left, $primary-light, $primary-dark);
+		animation: pulsate 1s infinite;
+	}
+
+	&:hover &__visible {
+		transform: translateY(100%);
+	}
+
+	&:hover &__invisible {
+		top: 0;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+// Buttons Colors
+
+.danger {
+	background-image: linear-gradient(to right, $danger, $orange) !important;
+
+	&:hover {
+		background-image: linear-gradient(to left, $orange, $danger) !important;
+	}
+}
+
+@keyframes pulsate {
+	0% {
+		transform: scale(1);
+		box-shadow: none;
+	}
+
+	50% {
+		transform: scale(1.1);
+		box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+	}
+
+	100% {
+		transform: scale(1);
+		box-shadow: none;
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"mongoURI": "mongodb+srv://helpify:helpify@cluster0-n7t6i.mongodb.net/test?retryWrites=true&w=majority",
+	"jwtSecret": "mysecrettoken",
+	"githubClientId": "7739a41b303ffe004f3a",
+	"githubClientSecret": "e441b08e814227534f8c0f9282fe201168b4c31f"
+}

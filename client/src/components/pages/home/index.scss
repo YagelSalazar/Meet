@@ -1,0 +1,278 @@
+@import '../../../sass/abstracts/variables';
+
+///////////////////////////////////////////
+// * HOME MAIN CONTENT
+
+.home-view {
+	background-color: $white;
+	flex: 1;
+
+	height: calc(100vh - 7rem);
+	overflow: scroll;
+
+	@media only screen and (max-width: $bp-m) {
+		height: calc(100vh - 27rem) !important;
+		overflow: auto;
+	}
+}
+
+.home-detail {
+	font-size: 1.4rem;
+	display: flex;
+	padding: 4rem;
+	background-color: $grey-l1;
+	border-bottom: $border-b;
+	border-radius: 1rem;
+
+	@media only screen and (max-width: $bp-m) {
+		flex-direction: column;
+		align-items: center;
+		padding: 3rem;
+	}
+}
+
+.home-info {
+	background-color: $white;
+	box-shadow: $sh-s;
+	margin-right: 3rem;
+	padding: 0 3rem;
+	flex: 0 0 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	@media only screen and (max-width: $bp-m) {
+		padding: 3rem;
+		margin: 1rem;
+	}
+
+	&__photo {
+		width: 12rem;
+		height: 12rem;
+		box-sizing: content-box;
+		border-radius: 50%;
+		border: 5px solid $white;
+		box-shadow: $sh-s;
+	}
+}
+
+.home-news {
+	flex: 1;
+	height: 50%;
+	padding: 0 1rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	@media only screen and (max-width: $bp-m) {
+		margin-top: 2rem;
+	}
+
+	&__item {
+		background-color: $white;
+		box-shadow: $sh-s;
+		padding: 3rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&:not(:last-of-type) {
+			margin-bottom: 1rem;
+		}
+
+		@media only screen and (max-width: $bp-m) {
+			padding: 3rem;
+			&:not(:last-of-type) {
+				margin-bottom: 3rem;
+			}
+		}
+
+		&__text {
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
+///////////////////////////////////////////
+// * GALERY ADDS
+.gallery {
+	display: flex;
+	overflow: auto;
+	overflow-y: hidden;
+	height: 20rem;
+	// position: relative;
+	border-bottom: $border-b;
+	background-image: linear-gradient(to right top, $primary-light, $primary-dark);
+
+	&__item {
+		display: inline-block;
+		height: 100%;
+	}
+
+	&__photo {
+		max-width: 40rem; // 800px
+		height: 20rem; // 400px
+	}
+	&:hover &__title {
+		display: block;
+	}
+
+	&__title {
+		position: absolute;
+		background-color: rgba($grey-l1, 0.3);
+		border-radius: 5px;
+		padding: 0.7rem 1.3rem;
+		cursor: pointer;
+		margin: 2rem;
+		display: none;
+		transition: all 0.2s;
+
+		&-text {
+			font-size: 1.5rem;
+			color: rgba($black, 0.6);
+			text-decoration: none;
+		}
+
+		&:hover {
+			box-shadow: $sh-s;
+			transform: scale(1.1);
+			background-color: $grey-l1;
+			margin: 2rem;
+		}
+	}
+}
+
+///////////////////////////////////////////
+// * TOP USERS
+.overview {
+	display: flex;
+	flex-direction: column;
+	height: 9rem;
+	border-bottom: $border-b;
+	align-items: center;
+	justify-content: center;
+
+	&__heading {
+		font-weight: 300;
+		font-size: 2.25rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		padding: 1.5rem 3rem;
+
+		@media only screen and (max-width: $bp-s) {
+			font-size: 1.6rem;
+			padding: 1.25rem 2rem;
+		}
+	}
+
+	&__stars {
+		margin-right: auto;
+		display: flex;
+	}
+
+	&__icon-star,
+	&__icon-location {
+		width: 1.75rem;
+		height: 1.75rem;
+		color: $primary;
+	}
+
+	&__location {
+		font-size: 1.2rem;
+		display: flex;
+		vertical-align: center;
+	}
+
+	&__icon-location {
+		margin-right: 0.5rem;
+	}
+
+	&__rating {
+		background-color: $primary-dark;
+		color: $white;
+		margin-left: 3rem;
+		padding: 0 2.5rem;
+		align-self: stretch;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		@media only screen and (max-width: $bp-s) {
+			padding: 0 1rem;
+		}
+	}
+
+	&__rating-average {
+		font-size: 2.2rem;
+		font-weight: 300;
+		margin-right: -3px;
+
+		@media only screen and (max-width: $bp-s) {
+			font-size: 1.8rem;
+		}
+	}
+
+	&__rating-count {
+		font-size: 0.8rem;
+		text-transform: uppercase;
+
+		@media only screen and (max-width: $bp-s) {
+			font-size: 0.7rem;
+		}
+	}
+}
+///////////////////////////////////////////
+// * RECOMMEND
+
+.recommend {
+	font-size: 1.3rem;
+	color: $grey-d3;
+
+	display: flex;
+	align-items: center;
+
+	&__friends {
+		display: flex;
+	}
+
+	&__photo {
+		box-sizing: content-box;
+		height: 4rem;
+		width: 4rem;
+		border-radius: 50%;
+		border: 2px solid $white;
+		transition: all 0.2s;
+
+		&:not(:last-child) {
+			margin-right: -1rem;
+		}
+
+		&:hover {
+			transform: scale(1.3);
+			z-index: 99;
+		}
+	}
+}
+
+///////////////////////////////////////////
+// * CALL TO ACTION
+
+.cta {
+	padding: 3.5rem 0;
+	text-align: center;
+
+	@media only screen and (max-width: $bp-m) {
+		padding: 2.5rem 0;
+	}
+
+	&__book-now {
+		font-size: 1.2rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		margin-bottom: 2.5rem;
+	}
+}

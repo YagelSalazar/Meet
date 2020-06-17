@@ -1,0 +1,208 @@
+@import '../../../sass/abstracts/variables';
+
+///////////////////////////////////////////
+// * HOME MAIN CONTENT
+
+.community-view {
+	background-color: $grey-d3;
+	flex: 1;
+
+	height: calc(100vh - 7rem);
+	overflow: scroll;
+}
+
+///////////////////////////////////////////
+// * SECONDARY CONTENTS
+
+.community-detail {
+	font-size: 1.4rem;
+	display: flex;
+	align-items: center;
+	background-color: $grey-l1;
+	border-bottom: $border-b;
+
+	@media only screen and (max-width: $bp-m) {
+		flex-direction: column;
+	}
+
+	&__post {
+		flex: 0 0 70%;
+		height: 100vh;
+
+		display: flex;
+		flex-direction: column;
+		overflow: auto;
+
+		@media only screen and (max-width: $bp-m) {
+			width: 100%;
+		}
+	}
+}
+
+///////////////////////////////////////////
+// * COMUNITY FORM
+.community-form {
+	padding: 2rem;
+	border-bottom: $border-b;
+	background-color: $white;
+
+	& form {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+
+		& .post-content {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+
+			background-color: $grey-l1;
+			border: 1px solid rgba($grey-d3, 0.1);
+			border-radius: 5px;
+			margin: 2rem 0;
+			transition: all 0.2s;
+
+			&:hover {
+				box-shadow: 0 0 2rem rgba($black, 0.14);
+			}
+		}
+
+		& figcaption {
+			flex: 0 0 14%;
+
+			display: flex;
+			justify-content: center;
+
+			& img {
+				width: 6rem;
+				height: 6rem;
+				border-radius: 100px;
+				@media only screen and (max-width: $bp-m) {
+					margin: auto 1rem;
+				}
+			}
+		}
+
+		& #newPost {
+			flex: 1;
+			display: flex;
+			justify-content: center;
+
+			border: 0px;
+			background-color: $white;
+			overflow: auto;
+			resize: none;
+			box-direction: none;
+			font-size: 1.7rem;
+			height: 10rem;
+			margin: 0px !important;
+			padding: 2rem;
+			transition: all 0.2s;
+
+			&:focus {
+				outline: none;
+				font-size: 2rem;
+			}
+		}
+	}
+}
+
+.community-posts {
+	padding: 3rem 3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+
+	@media only screen and (max-width: $bp-m) {
+		padding: 2rem;
+	}
+
+	&__edit {
+		width: 100%;
+
+		@media only screen and (max-width: $bp-s) {
+			width: 100%;
+		}
+	}
+
+	&__heading {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__photo {
+		width: 12rem;
+		height: 12rem;
+		box-sizing: content-box;
+		border-radius: 50%;
+		border: 5px solid $white;
+		box-shadow: $sh-s;
+	}
+
+	&__name {
+		margin-top: 1rem;
+		font-family: inherit;
+		font-weight: 700;
+		color: $primary;
+		text-align: center;
+		text-transform: uppercase;
+		border-bottom: 2px solid currentColor;
+	}
+}
+
+///////////////////////////////////////////
+// * GALERY ADDS
+.gallery-side {
+	flex: 1;
+	max-width: 100%;
+	height: 100vh;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	// position: relative;
+	background-image: linear-gradient(to right top, $primary-light, $primary-dark);
+
+	@media only screen and (max-width: $bp-m) {
+		display: none;
+	}
+
+	&__item {
+		height: 100%;
+		display: inline-block;
+	}
+
+	&__photo {
+		width: 100%; // 800px
+		height: 100%; // 400px
+	}
+	&:hover &__title {
+		display: block;
+	}
+
+	&__title {
+		position: absolute;
+		background-color: rgba($grey-l1, 0.3);
+		border-radius: 5px;
+		padding: 0.7rem 1.3rem;
+		cursor: pointer;
+		margin: 2rem;
+		display: none;
+		transition: all 0.2s;
+
+		&-text {
+			font-size: 1.5rem;
+			color: rgba($black, 0.6);
+			text-decoration: none;
+		}
+
+		&:hover {
+			box-shadow: $sh-s;
+			transform: scale(1.1);
+			background-color: $grey-l1;
+			margin: 2rem;
+		}
+	}
+}
